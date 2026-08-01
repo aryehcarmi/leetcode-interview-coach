@@ -1,6 +1,6 @@
 # LeetCode Interview Coach
 
-A disclosure-controlled coding-interview coach that can give the next useful hint, minimally repair an attempt, optimize the user's approach, teach canonical solutions, quiz understanding, and visualize execution without revealing more than the selected workflow allows.
+A disclosure-controlled coding-interview coach that can give the next useful hint, minimally repair an attempt, optimize the user's approach, teach optimal solutions, quiz understanding, and visualize the relevant concept(s)/pattern(s) without revealing more than the selected workflow allows.
 
 ## Direct skills
 
@@ -14,7 +14,7 @@ Each workflow is independently selectable:
 | $optimize | Improve the attempt without replacing its idea |
 | $best | Teach interview-canonical complete solutions |
 | $check | Audit time and space complexity |
-| $bar-raise | Ask exactly one hard follow-up |
+| $follow-up | Ask exactly one hard follow-up |
 | $visualize | Build an interactive, spoiler-safe mental model |
 | $low-level | Connect the algorithm to relevant systems behavior |
 | $quiz | Run adaptive retrieval and transfer practice |
@@ -23,14 +23,25 @@ Use $leetcode-interview-coach for natural-language routing, ambiguous requests, 
 
 ## Composition
 
-Select multiple skills in one prompt:
+Stacking multiple skills in one prompt composes them. Examples:
 
     $optimize $low-level
-    $stuck $quiz
-    $quiz $visualize
-    $bar-raise $low-level
 
-The leftmost base skill controls the response contract and disclosure ceiling. $visualize, $low-level, and $quiz are overlays and never raise that ceiling.
+For a low-level-systems optimization suggestion from your agent.
+
+    $stuck $quiz
+
+To get an HTML file (can open it in any browser) containing an interactive quiz, which guides your learning such that you'll get unstuck.
+
+    $quiz $visualize
+
+To get an HTML file containing a quiz with embedded visuals.
+
+    $follow-up $low-level
+
+Ask exactly one hard follow-up that pushes you to demonstrate mastery of low-level systems concepts.
+
+The leftmost base skill controls the response contract and disclosure ceiling. Use it to moderate how much of a spoiler the response will be. $visualize, $low-level, and $quiz are overlays and never raise that ceiling.
 
 ## Install
 
