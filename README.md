@@ -8,18 +8,18 @@ Each workflow is independently selectable:
 
 | Skill | Purpose |
 |---|---|
-| $stuck | Give the smallest useful progressive hint |
-| $lcd | Add the lowest-cost diagnostic |
-| $salvage | Make the minimum working repair |
-| $optimize | Improve the attempt without replacing its idea |
-| $best | Teach interview-canonical complete solutions |
-| $check | Audit time and space complexity |
-| $follow-up | Ask exactly one hard follow-up |
-| $visualize | Build an interactive, spoiler-safe mental model |
-| $low-level | Connect the algorithm to relevant systems behavior |
-| $quiz | Run adaptive retrieval and transfer practice |
+| /stuck | Gives you the smallest hint to get unstuck, without spoiling the solution |
+| /lcd | L.C. (Leetcode) debug: Suggests a quick debugging approach (rather than debugging it for you), to facilitate your debugging abilities |
+| /salvage | Preserves your approach as much as possible while showing you how to make it work |
+| /optimize | Suggests an optimization for your code without replacing its core ideas |
+| /best | Shows you the interview-best-practice solutions |
+| /check | Checks the correctness of your algorithmic analysis if you wrote it in comments, otherwise checks your code for correctness |
+| /follow-up | Ask a hard follow-up question, akin to the kind you might get from an interviewer |
+| /visualize | Builds an interactive, spoiler-safe (unless combined with a skill that could give you a solution) mental model |
+| /low-level | Connects the algorithm to relevant low-level systems concepts |
+| /quiz | Get an interactive HTML quiz file |
 
-Use $leetcode-interview-coach for natural-language routing, ambiguous requests, combinations, or the legacy slash aliases.
+Use /leetcode-interview-coach for your agent to choose the best skill routing (including combinations).
 
 ## Composition
 
@@ -31,15 +31,15 @@ For a low-level-systems optimization suggestion from your agent.
 
     $stuck $quiz
 
-To get an HTML file (can open it in any browser) containing an interactive quiz, which guides your learning such that you'll get unstuck.
+For an HTML file (can open it in any browser) containing an interactive quiz, which guides your learning such that you'll get unstuck.
 
     $quiz $visualize
 
-To get an HTML file containing a quiz with embedded visuals.
+For an HTML file containing a quiz with embedded visuals.
 
     $follow-up $low-level
 
-Ask exactly one hard follow-up that pushes you to demonstrate mastery of low-level systems concepts.
+For a hard follow-up question that pushes you to demonstrate mastery of low-level systems concepts.
 
 The leftmost base skill controls the response contract and disclosure ceiling. Use it to moderate how much of a spoiler the response will be. $visualize, $low-level, and $quiz are overlays and never raise that ceiling.
 
