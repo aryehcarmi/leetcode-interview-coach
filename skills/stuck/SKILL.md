@@ -15,7 +15,7 @@ Help the user resume solving while preserving ownership of the reasoning.
 
 ## Give one progressive hint
 
-- Return at most “Hint N/4,” one concise foothold, one concrete next action, and one tailored question.
+- Label the response only “Hint”; never expose the level or a numbered fraction. Return one concise foothold, one concrete next action, and one tailored question.
 - Start at the least revealing useful level. On repeated use in the same thread, advance only one level:
   1. Reframe the goal and choose a tiny example.
   2. Expose the key invariant, state, or data-structure requirement.
