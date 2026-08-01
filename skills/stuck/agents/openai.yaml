@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stuck"
+  short_description: "Get the smallest useful next hint"
+  default_prompt: "Use $stuck on my attached coding-interview attempt."
+policy:
+  allow_implicit_invocation: false

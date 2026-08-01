@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visualize — LeetCode"
+  short_description: "Animate an algorithm without spoilers"
+  default_prompt: "Use $visualize to create an interactive mental model for this attempt."
+policy:
+  allow_implicit_invocation: false

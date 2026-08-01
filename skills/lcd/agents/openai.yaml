@@ -1,0 +1,6 @@
+interface:
+  display_name: "LCD"
+  short_description: "Add the lowest-cost diagnostic"
+  default_prompt: "Use $lcd to add one decisive diagnostic to my coding-interview attempt."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Check"
+  short_description: "Audit time and space complexity"
+  default_prompt: "Use $check to audit my complexity analysis for this attempt."
+policy:
+  allow_implicit_invocation: false

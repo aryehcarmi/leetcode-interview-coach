@@ -1,0 +1,6 @@
+interface:
+  display_name: "Best"
+  short_description: "Teach canonical interview solutions"
+  default_prompt: "Use $best to teach me the canonical solutions to this interview problem."
+policy:
+  allow_implicit_invocation: false

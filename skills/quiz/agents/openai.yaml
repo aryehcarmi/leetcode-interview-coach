@@ -1,0 +1,6 @@
+interface:
+  display_name: "Quiz"
+  short_description: "Run adaptive interview practice"
+  default_prompt: "Use $quiz to quiz me on the most valuable idea in this attempt."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Salvage"
+  short_description: "Repair an attempt with minimal changes"
+  default_prompt: "Use $salvage to minimally repair my coding-interview attempt."
+policy:
+  allow_implicit_invocation: false

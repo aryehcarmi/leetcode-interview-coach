@@ -1,0 +1,6 @@
+interface:
+  display_name: "Low Level"
+  short_description: "Connect algorithms to systems behavior"
+  default_prompt: "Use $low-level to explain the most relevant systems detail in this attempt."
+policy:
+  allow_implicit_invocation: false

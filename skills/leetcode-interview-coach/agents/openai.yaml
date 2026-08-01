@@ -1,0 +1,6 @@
+interface:
+  display_name: "LeetCode Interview Coach"
+  short_description: "Unstick, visualize, optimize, quiz, and defend"
+  default_prompt: "Use $leetcode-interview-coach to coach my attached attempt without revealing more than I ask."
+policy:
+  allow_implicit_invocation: true
