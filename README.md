@@ -39,7 +39,3 @@ The repository stores every standalone skill under [skills](skills). Copy or sym
     ~/.agents/skills/
 
 Install the coordinator and all ten leaves to preserve direct invocation, natural-language routing, and composition. In Codex, type $ to select a skill. If newly installed skills do not appear, start a new task or restart Codex.
-
-## Safety
-
-The coach is for interview preparation. It provides real-time help during an employer interview or assessment only when the employer explicitly permits AI assistance.
