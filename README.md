@@ -1,10 +1,10 @@
 # LeetCode Interview Coach
 
-A coding-interview coach for AI agents that never tells you more than you asked for.
+A coding-interview coaching skill that never tells you more than you asked for.
 
 Ask a general-purpose agent for help with a LeetCode problem and it hands you the answer. That feels productive and teaches you nothing — the reasoning you were supposed to build is the exact thing it did for you.
 
-These eleven skills fix that. Each one is a **contract about how much it is allowed to reveal**. `/stuck` gives you the smallest next foothold and stops. `/lcd` tells you where to put one print statement, not what's wrong. `/check` audits your Big-O without touching your code. Only `/best` hands over a full solution, and only when you ask for it by name.
+These eleven skills fix that. Each one is a **contract about how much it is allowed to reveal**. `/stuck` gives you the smallest next foothold and stops. `/lcd` tells you where to put one print statement, not what's wrong. `/check` audits your Big-O analysis without touching your code. Only `/best` hands over a full solution, and only when you ask for it by name.
 
 Works with Claude Code, Codex, and any agent that reads `SKILL.md`.
 
