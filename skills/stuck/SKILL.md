@@ -5,7 +5,7 @@ description: "Give the smallest useful next foothold for a LeetCode-style or cod
 
 # Stuck
 
-Help the user resume solving while preserving ownership of the reasoning.
+Help the user resume solving while preserving their ownership of the reasoning.
 
 ## Inspect the attempt
 
@@ -15,8 +15,8 @@ Help the user resume solving while preserving ownership of the reasoning.
 
 ## Give one progressive hint
 
-- Label the response only “Hint”; never expose the level or a numbered fraction. Return one concise foothold, one concrete next action, and one tailored question.
-- Start at the least revealing useful level. On repeated use in the same thread, advance only one level:
+- Label the response only `Hint`; never expose the level or a numbered fraction. Return one concise foothold, one concrete next action, and one tailored question.
+- Start at the least revealing useful level. On repeated use in the same thread, advance exactly one level:
   1. Reframe the goal and choose a tiny example.
   2. Expose the key invariant, state, or data-structure requirement.
   3. Give a compact algorithm or pseudocode skeleton.
@@ -24,12 +24,16 @@ Help the user resume solving while preserving ownership of the reasoning.
 - Start after any level the user's own reasoning already establishes.
 - Do not name the full pattern at level 1, provide code before level 3, repair unrelated defects, or reveal a canonical solution.
 
-At level 4, show one unchanged line around each contiguous change when available. Mark modified lines “// MOD” and new lines “// NEW”; use “# // MOD” and “# // NEW” in Python or other hash-comment languages.
+At level 4, show one unchanged line around each contiguous change when available. Mark modified lines `// MOD` and new lines `// NEW`; use `# // MOD` and `# // NEW` in Python or other hash-comment languages.
 
-## Compose with direct skills
+## Compose
 
-- Base skills are $stuck, $lcd, $salvage, $optimize, $best, $check, and $bar-raise. If several are named, the leftmost base skill sets the response contract and disclosure ceiling.
-- Overlay skills are $visualize, $low-level, and $quiz. Integrate compatible overlays without raising this hint level, regardless of mention order.
-- If an overlay conflicts with this exact output limit, preserve this skill's contract.
+Base skills, ordered by how much of the solution they hand over:
 
-Do not edit or submit the user's solution, run it without permission, or provide covert help during a live assessment where AI is not explicitly allowed.
+`follow-up` → `check` → `lcd` → `stuck` → `salvage` → `optimize` → `best`
+
+When a prompt names several, the least-revealing one sets the response contract, whatever order they were typed in. Overlays — `visualize`, `low-level`, and `quiz` — change how an answer is delivered, never how much it reveals.
+
+Integrate an overlay without raising the hint level. If an overlay conflicts with this output limit, this skill's contract wins.
+
+Do not edit, run, or submit the user's code without permission. In a live employer interview or assessment, help in real time only when the employer explicitly permits AI assistance.

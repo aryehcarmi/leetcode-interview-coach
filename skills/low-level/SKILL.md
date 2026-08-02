@@ -16,17 +16,21 @@ Surface systems knowledge that causally sharpens the current algorithmic decisio
 
 ## Explain it
 
-- Return one “Low-level edge — <concept>” block per focal concept.
+- Return one `Low-level edge — <concept>` block per focal concept.
 - Explain the mechanism compactly, connect it causally to the current choice, and state why it matters.
 - End with one interview-ready sentence.
-- Keep asymptotic reasoning primary and qualify language-, runtime-, and architecture-dependent claims.
-- Add a short “Connection:” only when an adjacent mechanism completes a useful causal chain. Keep it subordinate.
+- Keep asymptotic reasoning primary, and qualify language-, runtime-, and architecture-dependent claims.
+- Add a short `Connection:` only when an adjacent mechanism completes a useful causal chain. Keep it subordinate.
 - Do not make speculative cache-hit, cycle-count, allocator, SIMD, or branch-prediction claims.
 
-## Compose with direct skills
+## Compose
 
-- $stuck, $lcd, $salvage, $optimize, $best, $check, and $bar-raise are base skills. The leftmost named base sets the disclosure and output ceiling, regardless of mention order.
-- $visualize, $low-level, and $quiz are overlays. Combine compatible overlays without revealing a stronger algorithm.
-- Under $bar-raise, convert the systems insight into exactly one question and do not answer it.
+Base skills, ordered by how much of the solution they hand over:
 
-Do not edit or submit the user's solution or provide covert help during an assessment where AI is not explicitly allowed.
+`follow-up` → `check` → `lcd` → `stuck` → `salvage` → `optimize` → `best`
+
+When a prompt names several, the least-revealing one sets the response contract, whatever order they were typed in. `low-level` is an overlay: it changes how an answer is delivered, never how much it reveals.
+
+Under `follow-up`, convert the systems insight into exactly one question and do not answer it. When two or more overlays are active, read [../leetcode-interview-coach/references/composable-modes.md](../leetcode-interview-coach/references/composable-modes.md) if it is installed.
+
+Do not edit, run, or submit the user's code without permission. In a live employer interview or assessment, help in real time only when the employer explicitly permits AI assistance.

@@ -1,6 +1,6 @@
 ---
 name: quiz
-description: "Run adaptive medium-difficulty retrieval and transfer practice based on a current LeetCode-style or coding-interview problem, and grade answers in an ongoing quiz. Use when explicitly invoked after a problem, attempt, or solution is available in the thread."
+description: "Run adaptive medium-difficulty retrieval and transfer practice based on a current LeetCode-style or coding-interview problem, and grade the answers. Use when explicitly invoked after a problem, attempt, or solution is available in the thread."
 ---
 
 # Quiz
@@ -16,18 +16,24 @@ Test the most valuable unresolved reasoning without leaking a stronger solution.
 
 After the user answers:
 
-1. Say “Correct” or “Not quite”.
+1. Say `Correct` or `Not quite`.
 2. Explain the governing invariant or mechanism in two to four sentences.
 3. Explain why the strongest distractor fails.
 4. Ask one adapted next question.
 
 Prefer prediction and transfer over vocabulary recall. Do not use trick wording, long mental execution, or answer-key-shaped hints.
 
-## Compose with direct skills
+## Compose
 
-- $stuck, $lcd, $salvage, $optimize, $best, $check, and $bar-raise are base skills. The leftmost named base sets the disclosure and output ceiling, regardless of mention order. Preserve that ceiling in the stem and every option.
-- With $visualize, create one self-contained interactive HTML quiz with four to six questions, answers hidden until submission, and visuals only where state or spatial reasoning materially helps.
-- With $low-level, test consequences of representation, equal-Big-O implementation choices, runtime hazards, hidden space, or amortized costs.
-- With $bar-raise, ask exactly one tailored question and stop.
+Base skills, ordered by how much of the solution they hand over:
 
-Do not provide covert assistance during an assessment where AI is not explicitly allowed.
+`follow-up` → `check` → `lcd` → `stuck` → `salvage` → `optimize` → `best`
+
+When a prompt names several, the least-revealing one sets the response contract, whatever order they were typed in. `quiz` is an overlay: it changes how an answer is delivered, never how much it reveals. Preserve the active ceiling in the stem and in every option.
+
+- With `visualize`, build one self-contained interactive HTML quiz of four to six questions, answers hidden until submission, and visuals only where state or spatial reasoning materially helps.
+- With `low-level`, test the consequences of representation, equal-Big-O implementation choices, runtime hazards, hidden space, or amortized costs.
+- With `follow-up`, ask exactly one tailored question and stop.
+- When two or more overlays are active, read [../leetcode-interview-coach/references/composable-modes.md](../leetcode-interview-coach/references/composable-modes.md) if it is installed.
+
+Do not edit, run, or submit the user's code without permission. In a live employer interview or assessment, help in real time only when the employer explicitly permits AI assistance.

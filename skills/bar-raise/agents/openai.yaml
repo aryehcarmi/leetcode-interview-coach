@@ -1,6 +1,0 @@
-interface:
-  display_name: "Bar Raise"
-  short_description: "Ask one difficult interview follow-up"
-  default_prompt: "Use $bar-raise to ask one hard follow-up about my current attempt."
-policy:
-  allow_implicit_invocation: false

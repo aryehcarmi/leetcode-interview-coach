@@ -6,7 +6,7 @@
 |---|---|---|
 | Understand constraints or model input | Integer width, character encoding, actual input representation | Cache or branch discussion before an algorithm exists |
 | Choose an approach | Access pattern, working-set size, contiguous versus pointer-based storage | Micro-optimizing an asymptotically inferior approach |
-| Choose a data structure | Storage layout, allocation behavior, amortization, expected versus worst-case hashing | Generic “arrays are cache friendly” with no decision attached |
+| Choose a data structure | Storage layout, allocation behavior, amortization, expected versus worst-case hashing | Generic "arrays are cache friendly" with no decision attached |
 | Implement or debug | Overflow, stack depth, aliasing, mutation versus copying, library-operation costs | Speculative CPU behavior |
 | Audit complexity | Recursion stack, resizing, hashing assumptions, slices and copies, queue operations | Mixing auxiliary and output space |
 | Optimize equal-complexity choices | Memory traffic and locality, allocation pressure, then branches or SIMD only when truly applicable | Claiming a constant-factor winner without runtime caveats |
@@ -37,13 +37,13 @@
 
 ## Refine by active base skill
 
-- $stuck: Use the concept as a question or hint toward the next decision.
-- $lcd: Bias the single diagnostic toward overflow, aliasing, encoding, or mutation only when plausibly causal.
-- $salvage: Prefer correctness mechanisms.
-- $optimize: Prefer locality, memory traffic, allocation, and working-set size.
-- $check: Expose hidden costs and distinguish expected, amortized, and worst-case bounds.
-- $best: Derive algorithms first, then compare implementation-level tradeoffs.
-- $bar-raise: Ask one systems-aware transfer question and stop.
+- `follow-up`: Ask one systems-aware transfer question and stop.
+- `check`: Expose hidden costs and distinguish expected, amortized, and worst-case bounds.
+- `lcd`: Bias the single diagnostic toward overflow, aliasing, encoding, or mutation, only when plausibly causal.
+- `stuck`: Use the concept as a question or hint toward the next decision.
+- `salvage`: Prefer correctness mechanisms.
+- `optimize`: Prefer locality, memory traffic, allocation, and working-set size.
+- `best`: Derive algorithms first, then compare implementation-level tradeoffs.
 
 ## Connect without diffusing focus
 

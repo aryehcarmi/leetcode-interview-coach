@@ -1,0 +1,6 @@
+interface:
+  display_name: "Follow-Up"
+  short_description: "Ask one hard interview follow-up"
+  default_prompt: "Use $follow-up to ask one hard follow-up about my current attempt."
+policy:
+  allow_implicit_invocation: false

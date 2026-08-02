@@ -1,15 +1,15 @@
 # Composable modes
 
-Read this file when two or more of $visualize, $low-level, and $quiz are active.
+Read this file when two or more of `visualize`, `low-level`, and `quiz` are active.
 
 ## Preserve precedence
 
-- The leftmost active base skill sets the response contract and disclosure ceiling.
-- Overlay order must not affect the disclosure class, selected learning target, or answer visibility.
+- The least-revealing active base skill sets the response contract and disclosure ceiling.
+- Overlay order must not affect the disclosure class, the selected learning target, or answer visibility.
 - If an overlay conflicts with an exact base format, the base contract wins.
-- Under $bar-raise, every combination remains exactly one unanswered question.
+- Under `follow-up`, every combination remains exactly one unanswered question.
 
-## Combine $visualize and $low-level
+## Combine `visualize` and `low-level`
 
 Create a textbook-style layered diagram:
 
@@ -18,13 +18,13 @@ Create a textbook-style layered diagram:
 3. A synchronized progression of relevant reads, writes, pointer traversals, allocations, stack-frame changes, or memory access.
 4. A short causal explanation of how the mechanism affects the actual tradeoff.
 
-Give visual depth to only the best one or two systems concepts. Show adjacent connections as smaller annotations or causal arrows. Label invented addresses and cache-line boundaries “illustrative, not to scale”; never manufacture exact cache hits, cycle counts, or allocator behavior.
+Give visual depth to only the best one or two systems concepts. Show adjacent connections as smaller annotations or causal arrows. Label invented addresses and cache-line boundaries `illustrative, not to scale`; never manufacture exact cache hits, cycle counts, or allocator behavior.
 
-## Combine $quiz and $low-level
+## Combine `quiz` and `low-level`
 
-Test consequences of representation changes, equal-Big-O implementation choices, language or runtime correctness hazards, hidden space, or amortized costs. Explain mechanisms rather than rewarding terminology. Preserve the base skill's disclosure ceiling in every option.
+Test the consequences of representation changes, equal-Big-O implementation choices, language or runtime correctness hazards, hidden space, or amortized costs. Explain mechanisms rather than rewarding terminology. Preserve the base skill's disclosure ceiling in every option.
 
-## Combine $quiz and $visualize
+## Combine `quiz` and `visualize`
 
 Create one self-contained interactive HTML quiz with four to six medium-difficulty questions:
 

@@ -19,7 +19,7 @@ Do not retest a point the user has already demonstrated unless spaced repetition
 - Use three or four concise options.
 - Derive distractors from plausible misconceptions: off-by-one boundaries, wrong invariant, premature update, incorrect expected-versus-worst-case reasoning, copying or aliasing mistakes, or a representation mismatch.
 - Keep code fragments tiny and language-valid. Do not require mental execution of long code.
-- Avoid trick wording, “all of the above,” and trivia detached from the current problem.
+- Avoid trick wording, "all of the above," and trivia detached from the current problem.
 - Do not make the longest or most qualified option predictably correct.
 - Preserve the active reveal ceiling in the stem and every option.
 
@@ -29,7 +29,7 @@ Ask one question and stop. Do not show the answer or an answer-key-shaped hint.
 
 After the user answers:
 
-1. Say “Correct” or “Not quite”.
+1. Say `Correct` or `Not quite`.
 2. Explain the governing invariant or mechanism in two to four sentences.
 3. Explain why the strongest distractor fails.
 4. Ask the next question, adapting its difficulty or target to the answer.

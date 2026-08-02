@@ -36,7 +36,7 @@ Coaching inference: emphasize correct DSA reasoning, language fluency, debugging
 
 1. Train a repeatable loop: clarify → example → invariant/plan → implement → test → complexity → tradeoff.
 2. Prefer executable code and deliberate tests over pseudocode or a memorized pattern label.
-3. Use `/bar-raise` to vary constraints, expose an adversarial case, request a proof, or connect a data structure to runtime behavior.
+3. Use `follow-up` to vary constraints, expose an adversarial case, request a proof, or connect a data structure to runtime behavior.
 4. Treat LeetCode as fundamentals practice, not a complete simulation of open-ended, debugging, systems, or code-review rounds.
 5. Train without AI dependence. Anthropic prohibits live AI help unless explicitly allowed; HRT calls undisclosed LLM use cheating; Two Sigma prohibits AI during assessments.
 6. Recognize authorized AI formats as a separate skill: Meta and Amazon have published AI-assisted assessment formats, and Google confirmed a limited 2026 Gemini code-comprehension pilot. In those formats, test decomposition, output validation, debugging, and the ability to explain or reject AI suggestions. Never infer permission from industry trends.

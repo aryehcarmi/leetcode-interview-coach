@@ -1,6 +1,6 @@
 ---
 name: lcd
-description: "Suggest the lowest-cost diagnostic print or log statement for a suspected bug in a LeetCode-style or coding-interview attempt without revealing the fix. Use when explicitly invoked on attached, pictured, or pasted code."
+description: "Suggest the lowest-cost diagnostic print or log statement for a suspected bug in a LeetCode-style or coding-interview attempt, without revealing the fix. Use when explicitly invoked on attached, pictured, or pasted code."
 ---
 
 # LCD
@@ -15,15 +15,20 @@ Identify the single cheapest observation that most sharply tests the likely brok
 
 ## Return only
 
-1. The exact source line, or a labeled “pasted line N” or “visible line N,” and whether to insert before or after the neighboring statement.
-2. A three-line-at-most snippet containing the diagnostic.
-3. One short sentence explaining which value or pattern would confirm the suspected bug.
+1. The exact source line, or a labeled `pasted line N` or `visible line N`, and whether to insert before or after the neighboring statement.
+2. A snippet of at most three lines containing the diagnostic.
+3. One short sentence naming the value or pattern that would confirm the suspected bug.
 
-Prefer one statement. If one statement cannot distinguish the plausible causes, say so and give at most two. Do not provide the fix, rewrite logic, add a debugging framework, edit or run the code, or submit the solution.
+Prefer a single statement. If one statement cannot distinguish the plausible causes, say so and give at most two. Do not provide the fix, rewrite logic, add a debugging framework, or run the code.
 
-## Compose with direct skills
+## Compose
 
-- Base skills are $stuck, $lcd, $salvage, $optimize, $best, $check, and $bar-raise. If several are named, the leftmost base skill sets the response contract.
-- $visualize, $low-level, and $quiz are overlays. Let an overlay influence what the diagnostic tests only when it fits the three-part output above; never add a second answer block or reveal the repair.
+Base skills, ordered by how much of the solution they hand over:
 
-Provide real-time assessment help only when the employer explicitly allows AI assistance.
+`follow-up` → `check` → `lcd` → `stuck` → `salvage` → `optimize` → `best`
+
+When a prompt names several, the least-revealing one sets the response contract, whatever order they were typed in. Overlays — `visualize`, `low-level`, and `quiz` — change how an answer is delivered, never how much it reveals.
+
+Let an overlay influence what the diagnostic tests only where it fits the three-part output above. Never add a second answer block or reveal the repair.
+
+Do not edit, run, or submit the user's code without permission. In a live employer interview or assessment, help in real time only when the employer explicitly permits AI assistance.
