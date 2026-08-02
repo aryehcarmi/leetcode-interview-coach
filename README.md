@@ -6,38 +6,38 @@ A disclosure-controlled coding-interview coach that can give the next useful hin
 
 Each workflow is independently selectable:
 
-| Skill | Purpose |
-|---|---|
-| /stuck | Gives you the smallest hint to get unstuck, without spoiling the solution |
-| /lcd | L.C. (Leetcode) debug: Suggests a quick debugging approach (rather than debugging it for you), to facilitate your debugging abilities |
-| /salvage | Preserves your approach as much as possible while showing you how to make it work |
-| /optimize | Suggests an optimization for your code without replacing its core ideas |
-| /best | Shows you the interview-best-practice solutions |
-| /check | Checks the correctness of your algorithmic analysis if you wrote it in comments, otherwise checks your code for correctness |
-| /follow-up | Ask a hard follow-up question, akin to the kind you might get from an interviewer |
-| /visualize | Builds an interactive, spoiler-safe (unless combined with a skill that could give you a solution) mental model |
-| /low-level | Connects the algorithm to relevant low-level systems concepts |
-| /quiz | Get an interactive HTML quiz file |
+| Skill Title | Codex Invocation | Claude Code Invocation | Purpose |
+|---|---|---|---|
+| Stuck | $stuck | /stuck | Gives you the smallest hint to get unstuck, without spoiling the solution |
+| L.C. (Leetcode) Debug | $lcd | /lcd | Suggests a quick debugging approach (rather than debugging it for you), to facilitate your debugging abilities |
+| Salvage | $salvage | /salvage | Preserves your approach as much as possible while showing you how to make it work |
+| Optimize | $optimize | /optimize | Suggests an optimization for your code without replacing its core ideas |
+| Best | $best | /best | Shows you the interview-best-practice solutions |
+| Check | $check | /check | Checks the correctness of your algorithmic analysis if you wrote it in comments, otherwise checks your code for correctness |
+| Follow-Up | $follow-up | /follow-up | Ask a hard follow-up question, akin to the kind you might get from an interviewer |
+| Visualize | $visualize | /visualize | Builds an interactive, spoiler-safe (unless combined with a skill that could give you a solution) mental model |
+| Low-Level | $low-level | /low-level | Connects the algorithm to relevant low-level systems concepts |
+| Quiz | $quiz | /quiz | Get an interactive HTML quiz file |
 
-Use /leetcode-interview-coach for your agent to choose the best skill routing (including combinations).
+Use $leetcode-interview-coach (/leetcode-interview-coach in Claude Code) for your agent to choose the best skill routing (including combinations).
 
 ## Composition
 
 Stacking multiple skills in one prompt composes them. Examples:
 
-    $optimize $low-level
+    /optimize /low-level
 
 For a low-level-systems optimization suggestion from your agent.
 
-    $stuck $quiz
+    /stuck /quiz
 
 For an HTML file (can open it in any browser) containing an interactive quiz, which guides your learning such that you'll get unstuck.
 
-    $quiz $visualize
+    /quiz /visualize
 
 For an HTML file containing a quiz with embedded visuals.
 
-    $follow-up $low-level
+    /follow-up /low-level
 
 For a hard follow-up question that pushes you to demonstrate mastery of low-level systems concepts.
 
