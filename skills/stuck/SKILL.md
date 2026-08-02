@@ -24,7 +24,19 @@ Help the user resume solving while preserving their ownership of the reasoning.
 - Start after any level the user's own reasoning already establishes.
 - Do not name the full pattern at level 1, provide code before level 3, repair unrelated defects, or reveal a canonical solution.
 
-At level 4, show one unchanged line around each contiguous change when available. Mark modified lines `// MOD` and new lines `// NEW`; use `# // MOD` and `# // NEW` in Python or other hash-comment languages.
+At level 4, show one unchanged line around each contiguous change when available, and mark the changed lines as described below.
+
+## Mark the changes
+
+A marker tells the user what to edit in a file they already have, so it belongs only on a patch against existing code.
+
+- A line the user must add → `NEW`
+- An existing line the user must change → `MOD`
+- An unchanged line shown for context → no marker
+
+Write the marker as a trailing comment in the target language's own comment syntax, and never mix two languages' syntax: `// NEW` in C, Java, JavaScript, Go, or Rust; `# NEW` in Python, Ruby, or shell; `-- MOD` in SQL or Lua; `<!-- NEW -->` in HTML.
+
+Do not mark code the user has no existing version of. When every line is new there is nothing to distinguish, and the markers are pure noise.
 
 ## Compose
 

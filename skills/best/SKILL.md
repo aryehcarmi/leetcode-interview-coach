@@ -22,7 +22,7 @@ Treat explicit invocation as authorization to reveal the complete interview-read
    - a compact correctness argument and the important edge cases;
    - time and auxiliary-space complexity; and
    - concise benefits, tradeoffs, and when to choose it.
-3. Provide clean standalone code in the user's language when code materially aids learning. Mark every generated line `// NEW`; use `# // NEW` in Python or other hash-comment languages.
+3. Provide clean standalone code in the user's language when code materially aids learning. Return it unmarked: this is a solution taught from scratch, not a patch against a file the user already has, so `NEW` and `MOD` markers would land on every line and distinguish nothing.
 4. End with two or three interview-ready sentences the user could say aloud to justify the chosen approach.
 
 Emphasize derivation and proof rather than memorized pattern labels.

@@ -28,6 +28,10 @@ These skills are prompts, so the bar is behavioral: does the agent actually do t
 
 **Don't duplicate a reference across skills.** Link to the sibling copy instead. The two copies will drift; the drift is what caused half the cleanup in this repo's history.
 
+**Except for two blocks, which are duplicated on purpose.** The disclosure ladder and the `## Mark the changes` section have to be in context on every invocation, and every skill has to work when installed alone — so each carries its own copy. Change one, change all; the validator fails if they drift apart.
+
+**Markers are a diff notation.** `NEW` and `MOD` answer "what do I edit in my file?", so they belong only on a patch against code the user already has, written in the target language's own comment syntax. Code with no existing counterpart — a solution taught from scratch, an artifact a skill authors — is returned unmarked, because a marker on every line distinguishes nothing.
+
 ## Adding a skill
 
 A new base skill has to earn a rung on the disclosure ladder:

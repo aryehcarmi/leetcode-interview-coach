@@ -58,6 +58,18 @@ Base skills are ordered by how much of the solution they hand over:
 - `follow-up` always remains exactly one unanswered question.
 - Read [references/composable-modes.md](references/composable-modes.md) whenever two or more overlays are active.
 
+## Mark the changes
+
+A marker tells the user what to edit in a file they already have, so it belongs only on a patch against existing code.
+
+- A line the user must add → `NEW`
+- An existing line the user must change → `MOD`
+- An unchanged line shown for context → no marker
+
+Write the marker as a trailing comment in the target language's own comment syntax, and never mix two languages' syntax: `// NEW` in C, Java, JavaScript, Go, or Rust; `# NEW` in Python, Ruby, or shell; `-- MOD` in SQL or Lua; `<!-- NEW -->` in HTML.
+
+Do not mark code the user has no existing version of. When every line is new there is nothing to distinguish, and the markers are pure noise.
+
 ## Inspect the attempt
 
 1. Read the problem, constraints, code, visible line numbers, error, observed output, and relevant thread context from the screenshot, image, attachment, or paste.

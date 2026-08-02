@@ -20,7 +20,7 @@ Create one focused, colorful, interactive HTML mental model whose content respec
 3. Use one dominant visual with stable semantic roles such as current, candidate, committed, rejected, and output. Pair color with text, shape, border, or icon.
 4. For playback, provide Previous, Next, Play/Pause, and visible progress. Add reset, speed, or a scrubber only when useful.
 5. Honor `prefers-reduced-motion`; never loop motion or spend animation on initial appearance.
-6. Treat the HTML as an artifact, not as a suggested code change. Do not add `// NEW` or `// MOD` markers to it.
+6. Treat the HTML as an artifact, not as a patch against the user's code. Return it unmarked: `NEW` and `MOD` markers belong only on a change to a file the user already has.
 7. Open or render it for visual QA before delivery, then return a concise absolute file link.
 
 ## Verify before delivering

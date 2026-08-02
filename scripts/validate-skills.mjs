@@ -129,6 +129,40 @@ for (const file of [...markdownFiles(ROOT), ...filesMatching(ROOT, /\.ya?ml$/)])
   }
 }
 
+// 6. A change marker written in two languages' comment syntax at once (`# // NEW`) is valid in neither.
+for (const file of markdownFiles(ROOT)) {
+  for (const [match] of readFileSync(file, 'utf8').matchAll(/(?:#|--|;+)\s*(?:\/\/|\/\*)\s*(?:NEW|MOD)/g)) {
+    fail(file, `"${match}" mixes two languages' comment syntax; use one language's own comment token`)
+  }
+}
+
+/** The body of a `## <heading>` section, up to the next heading of any level or end of file. */
+function section(source, heading) {
+  const start = source.indexOf(`## ${heading}\n`)
+  if (start === -1) return null
+  const rest = source.slice(start)
+  const end = rest.indexOf('\n## ', 1)
+  return (end === -1 ? rest : rest.slice(0, end)).trim()
+}
+
+// 7. Blocks duplicated by design — so each skill works when installed alone — must stay identical.
+for (const [label, extract] of [
+  // The disclosure ladder, in either its prose or its code-fence form.
+  ['disclosure ladder', (s) => s.match(/^.*follow-up.*→.*\bbest\b.*$/m)?.[0].replace(/`/g, '').trim()],
+  // The whole `## Mark the changes` section, wherever a skill carries one.
+  ['change-marker rule', (s) => section(s, 'Mark the changes')],
+]) {
+  const byText = new Map()
+  for (const file of markdownFiles(ROOT)) {
+    const block = extract(readFileSync(file, 'utf8'))
+    if (block) byText.set(block, [...(byText.get(block) ?? []), file])
+  }
+  if (byText.size > 1) {
+    const variants = [...byText.values()].map((files) => files.map((f) => relative(ROOT, f)).join(', '))
+    fail(SKILLS_DIR, `${label} differs between files; these groups disagree: ${variants.join(' | ')}`)
+  }
+}
+
 if (errors.length > 0) {
   console.error(`${errors.length} problem(s) found:\n`)
   for (const error of errors) console.error(`  ✗ ${error}`)
