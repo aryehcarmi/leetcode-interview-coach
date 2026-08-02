@@ -1,12 +1,8 @@
 # Working on this repo
 
-This repo is a set of agent skills for coding-interview practice. Every file is a prompt; there is no application code.
+This repo is a set of agent skills for coding-interview practice. Every file is a prompt; there is no application code, no build, and no test suite. The only script, `scripts/install.sh`, symlinks the skills into the agent directories on the machine.
 
-Before finishing any change, run:
-
-```bash
-node scripts/validate-skills.mjs
-```
+Because there is nothing to run, changes are verified by using the skill and reading what the agent produces — not by inspecting the file and declaring it correct.
 
 ## What the skills are
 
@@ -25,7 +21,7 @@ The whole point of the repo is that ceiling. A change that lets a skill reveal m
 - Keep `SKILL.md` frontmatter to `name` and `description`. Vendor-specific metadata belongs in `agents/`.
 - The directory name and the frontmatter `name` must match.
 - Refer to other skills by bare name in backticks — `` `stuck` ``, never `/stuck` or `$stuck`. These files are read by both Claude Code and Codex, which use different prefixes.
-- Two blocks are duplicated on purpose, so each skill works when installed alone: the disclosure ladder, and the `## Mark the changes` section in the skills that emit patches. Change one copy, change all of them — the validator fails if they drift apart.
+- Two blocks are duplicated on purpose, so each skill works when installed alone: the disclosure ladder, and the `## Mark the changes` section in the skills that emit patches. When changing one in this repo, change the rest so the set stays coherent. Nothing enforces this; a user's own partially edited copy is valid.
 - `NEW` and `MOD` markers are a diff notation. They only make sense against code the user already has, and they are written in the target language's own comment syntax. A complete solution or an artifact this repo authors is returned unmarked.
 - Long or occasional material goes in `references/` and gets linked from the `SKILL.md`, so it loads only when needed.
 - Never duplicate a reference file across two skills. Link to the sibling.

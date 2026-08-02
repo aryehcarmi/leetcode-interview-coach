@@ -10,37 +10,21 @@ Works with Claude Code, Codex, and any agent that reads `SKILL.md`.
 
 ## Install
 
-<details open>
-<summary><strong>Claude Code</strong></summary>
-
 ```bash
 git clone https://github.com/aryehcarmi/leetcode-interview-coach.git
-mkdir -p ~/.claude/skills
-cp -R leetcode-interview-coach/skills/* ~/.claude/skills/
+cd leetcode-interview-coach
+./scripts/install.sh
 ```
 
-Then type `/stuck`, `/best`, and so on. Use `.claude/skills/` in your project instead to scope them to one repo.
+That symlinks all eleven skills into whichever agent homes it finds — `~/.claude/skills` for Claude Code, `~/.agents/skills` or `~/.codex/skills` for Codex. Then type `/stuck` in Claude Code, or `$` in Codex to pick from a list. If new skills don't appear, start a new session.
 
-</details>
+Symlinks are the default on purpose: **edit the files in the clone and your agent picks it up immediately**, while `git pull` still brings updates. Rewrite the wording, change the ladder, delete the skills you don't use — that's the intended way to run these.
 
-<details open>
-<summary><strong>Codex</strong></summary>
-
-```bash
-git clone https://github.com/aryehcarmi/leetcode-interview-coach.git
-mkdir -p ~/.agents/skills
-cp -R leetcode-interview-coach/skills/* ~/.agents/skills/
-```
-
-Then type `$` and pick a skill. `~/.codex/skills/` works too. If new skills don't appear, start a new task or restart Codex.
-
-</details>
-
-Symlink instead of copying if you want to hack on the skills and keep your edits:
-
-```bash
-ln -s "$PWD"/leetcode-interview-coach/skills/* ~/.claude/skills/
-```
+| | |
+|---|---|
+| `./scripts/install.sh --copy` | independent copies instead, if you'd rather fork and never think about this repo again |
+| `./scripts/install.sh --force` | replace skills already installed under the same names |
+| `./scripts/install.sh --target .claude/skills` | install into one project instead of your home directory |
 
 Install all eleven. The skills reference each other by relative path, and composition depends on them being siblings.
 
@@ -97,11 +81,11 @@ skills/
 
 `SKILL.md` frontmatter is the portable part — `name` and `description`, nothing agent-specific. Anything one runtime understands and another doesn't lives in `agents/`.
 
-Run `node scripts/validate-skills.mjs` to check that every skill's directory name matches its frontmatter `name`, that descriptions say when to trigger, and that no relative link is broken. CI runs it on every push.
+There's no build, no lint, and no CI. It's markdown and one install script; change whatever you want.
 
 ## Contributing
 
-Issues and pull requests welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions a new skill has to follow.
+Issues and pull requests welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions that keep the set coherent.
 
 ## License
 
