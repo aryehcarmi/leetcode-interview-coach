@@ -1,21 +1,20 @@
 ---
-name: bar-raise
-description: "Ask exactly one difficult, tailored interviewer follow-up about the current LeetCode-style or coding-interview attempt and wait for the user's response. Use when explicitly invoked after a problem, approach, or solution is established."
+name: follow-up
+description: "Ask one difficult interviewer-style follow-up about the current problem attempt and wait for the user's response."
 ---
 
-# Bar Raise
+# Follow-Up
 
-Ask exactly one challenging but answerable follow-up, then stop.
+Ask exactly a challenging but answerable follow-up.
 
 ## Choose the question
 
-1. Read the current problem, attempt, result status, complexity, and reasoning already demonstrated.
+1. Read the current problem context (e.g. attempt, result status, complexity, and/or any reasoning already demonstrated).
 2. If the code has not been run, prefer an adversarial case, invariant, or failure-prediction question.
 3. If correctness is uncertain, probe correctness or proof before optimization.
 4. If the solution works, probe changed constraints, alternative data structures, scaling, complexity bounds, language behavior, or test design.
-5. Avoid trivia and generic prompts.
 
-Do not answer the question until the user attempts it or explicitly requests the answer. Return no preamble, coaching, hint, second question, or solution.
+Do not answer the question until the user attempts it or explicitly requests the answer.
 
 ## Compose with direct skills
 
