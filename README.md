@@ -67,10 +67,10 @@ And `leetcode-interview-coach`, a router: describe your situation in plain Engli
 Stack skills in one prompt and they combine:
 
 ```
-/optimize /low-level     a speedup argued from memory behavior, not just Big-O
-/stuck /quiz             an HTML quiz that walks you to the insight you're missing
-/quiz /visualize         a quiz with embedded animations
-/follow-up /low-level    one hard question about what your data structure does to the machine
+/optimize /low-level     a speedup argued from low-level systems behavior, not just Big-O
+/stuck /quiz             an interactive quiz (as an HTML file) that walks you to the insight you're missing
+/quiz /visualize         a quiz with embedded visual aids.
+/follow-up /low-level    one follow-up question aimed at assessing your understanding of low-level systems concepts (that are relevant to the problem). 
 ```
 
 **The least-revealing skill in the prompt wins.** Order doesn't matter — `/stuck /best` and `/best /stuck` both give you a hint, because `stuck` sits lower on the ladder.
