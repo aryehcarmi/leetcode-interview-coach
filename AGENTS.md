@@ -1,8 +1,8 @@
 # Working on this repo
 
-This repo is a set of agent skills for coding-interview practice. Every file is a prompt; there is no application code, no build, and no test suite. The only script, `scripts/install.sh`, symlinks the skills into the agent directories on the machine.
+This repo is a skills-only plugin for coding-interview practice. `.codex-plugin/plugin.json` packages the eleven workflows under `skills/` as one installable unit. Every skill file is a prompt; there is no application code, build, or test suite. The only executable script, `scripts/install.sh`, symlinks the skills into agent directories for direct installation and local development.
 
-Because there is nothing to run, changes are verified by using the skill and reading what the agent produces — not by inspecting the file and declaring it correct.
+Validate plugin and skill metadata structurally. Behavioral changes are verified by using the skill and reading what the agent produces — not by inspecting the file and declaring it correct.
 
 ## What the skills are
 

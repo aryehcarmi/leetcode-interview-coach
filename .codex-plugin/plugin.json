@@ -1,0 +1,38 @@
+{
+  "name": "leetcode-interview-coach",
+  "version": "0.1.0",
+  "description": "A coding-interview coach that never reveals more than you ask for.",
+  "author": {
+    "name": "Aryeh Carmi",
+    "url": "https://github.com/aryehcarmi"
+  },
+  "homepage": "https://github.com/aryehcarmi/leetcode-interview-coach",
+  "repository": "https://github.com/aryehcarmi/leetcode-interview-coach",
+  "license": "MIT",
+  "keywords": [
+    "leetcode",
+    "coding-interview",
+    "algorithms",
+    "data-structures",
+    "interview-coaching"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LeetCode Interview Coach",
+    "shortDescription": "Practice coding interviews without unwanted spoilers",
+    "longDescription": "Eleven composable skills coach coding-interview practice through a seven-rung disclosure ladder. Get anything from one hard follow-up to a full canonical solution, with visualization, low-level, and quiz overlays that never raise the spoiler ceiling.",
+    "developerName": "Aryeh Carmi",
+    "category": "Education & Research",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/aryehcarmi/leetcode-interview-coach",
+    "defaultPrompt": [
+      "Coach my coding-interview attempt without revealing more than I ask.",
+      "I'm stuck. Give me the smallest useful next hint.",
+      "Quiz me on the reasoning behind my current solution."
+    ]
+  }
+}

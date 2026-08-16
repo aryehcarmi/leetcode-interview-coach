@@ -2,7 +2,7 @@
 
 Issues and pull requests are both welcome.
 
-Nothing here is enforced by a tool. These are prompts, not code — there is no build, no lint, and no CI. The conventions below are what keeps the set coherent, not rules you can fail.
+These are prompts, not application code: there is no build, test suite, or CI. Plugin and skill metadata can be validated structurally, but the conventions below and behavioral testing are what keep the set coherent.
 
 ## Hacking on them for yourself
 
