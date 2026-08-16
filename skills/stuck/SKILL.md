@@ -21,8 +21,10 @@ Help the user resume solving while preserving their ownership of the reasoning.
   2. Expose the key invariant, state, or data-structure requirement.
   3. Give a compact algorithm or pseudocode skeleton.
   4. Bridge the immediate code gap with the smallest marked snippet.
+- Keep the foothold, action, and question within the same single level; none may preview a later level.
 - Start after any level the user's own reasoning already establishes.
-- Do not name the full pattern at level 1, provide code before level 3, repair unrelated defects, or reveal a canonical solution.
+- At level 1, limit the action and question to restating the goal or tracing a tiny example. Do not imply an invariant, remembered state, data structure, optimization direction, or named pattern.
+- Do not provide code before level 3, repair unrelated defects, or reveal a canonical solution.
 
 At level 4, show one unchanged line around each contiguous change when available, and mark the changed lines as described below.
 

@@ -4,11 +4,17 @@ A coding-interview coaching skill that never tells you more than you asked for.
 
 Ask a general-purpose agent for help with a LeetCode problem and it hands you the answer. That feels productive and teaches you nothing — the reasoning you were supposed to build is the exact thing it did for you.
 
-These eleven skills fix that. Each one is a **contract about how much it is allowed to reveal**. `/stuck` gives you the smallest next foothold and stops. `/lcd` tells you where to put one print statement, not what's wrong. `/check` audits your Big-O analysis without touching your code. Only `/best` hands over a full solution, and only when you ask for it by name.
+These eleven skills fix that. They are packaged together as a **skills-only plugin**, and each skill is a contract about how much it is allowed to reveal. `/stuck` gives you the smallest next foothold and stops. `/lcd` tells you where to put one print statement, not what's wrong. `/check` audits your Big-O analysis without touching your code. Only `/best` hands over a full solution, and only when you ask for it by name.
 
 Works with Claude Code, Codex, and any agent that reads `SKILL.md`.
 
-## Install
+## Plugin package
+
+The repository root is a standard Codex/ChatGPT plugin. Its manifest at `.codex-plugin/plugin.json` gives the bundle one identity while keeping every workflow independently invocable under `skills/`.
+
+The plugin is ready to be referenced from a marketplace or submitted to a plugin directory; marketplace registration is a separate distribution step. After installing it, start a new chat or Codex session so the bundled skills are loaded.
+
+## Direct install
 
 ```bash
 git clone https://github.com/aryehcarmi/leetcode-interview-coach.git
@@ -16,7 +22,9 @@ cd leetcode-interview-coach
 ./scripts/install.sh
 ```
 
-That symlinks all eleven skills into whichever agent homes it finds — `~/.claude/skills` for Claude Code, `~/.agents/skills` or `~/.codex/skills` for Codex. Then type `/stuck` in Claude Code, or `$` in Codex to pick from a list. If new skills don't appear, start a new session.
+That symlinks all eleven skills into whichever agent homes it finds — `~/.claude/skills` for Claude Code, `~/.agents/skills` or `~/.codex/skills` for Codex. Use this route for Claude Code, agents without plugin support, or editable local development. Then type `/stuck` in Claude Code, or `$` in Codex to pick from a list. If new skills don't appear, start a new session.
+
+For Codex, choose either the plugin or the direct install. Installing both exposes duplicate skill names and can make routing ambiguous.
 
 Symlinks are the default on purpose: **edit the files in the clone and your agent picks it up immediately**, while `git pull` still brings updates. Rewrite the wording, change the ladder, delete the skills you don't use — that's the intended way to run these.
 
@@ -72,6 +80,8 @@ That rule is deliberate. A spoiler can't be taken back, so the ceiling always fa
 ## Repo layout
 
 ```
+.codex-plugin/
+  plugin.json              the plugin identity and install-surface metadata
 skills/
   <skill-name>/
     SKILL.md               the skill itself: frontmatter + instructions
@@ -81,7 +91,7 @@ skills/
 
 `SKILL.md` frontmatter is the portable part — `name` and `description`, nothing agent-specific. Anything one runtime understands and another doesn't lives in `agents/`.
 
-There's no build, no lint, and no CI. It's markdown and one install script; change whatever you want.
+There's no application build or test suite. The plugin manifest and skill metadata can be validated structurally, but behavior is tested by invoking the skills and reading what the agent produces.
 
 ## Contributing
 
